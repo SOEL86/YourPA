@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Your Life Coach</title>
+	<link rel="stylesheet" href="../Shared/timer.css">
+	<link rel="stylesheet" href="../Shared/slider.css">
+	<link rel="stylesheet" href="../Shared/style.css">
+</head>
+
+<body id="body" class="light">
+    <div id="voicebar">
+        <div>
+            <span class="barhighlight" onclick="toggleSettings()">Settings</span>
+        </div>
+        <div id="settings-bar" style="display:initial">
+            <span class="setting-option">voice input<label class="switch"><input id="inputBtn" type="checkbox" onclick="window.location.replace('../Voice/index.html')"><span class="slider round"></span></label></span>
+            <span class="setting-option">speak<label class="switch"><input id="speech-set" type="checkbox" onclick="toggleSpeech()" checked><span class="slider round"></span></label></span>
+        </div>
+        <div>
+            <span class="barhighlight" onclick="toggleVoiceSelect()">Voice</span>
+            <select id="voice-select" style="display:none" onchange="changeVoice()"></select>
+        </div>
+        <div>
+            <span class="barhighlight" onclick="toggleThemeSwitch()">Theme</span>
+            <span id="theme-switch" style="display:none">light <label class="switch"><input id="theme-set" type="checkbox" onclick="switchTheme();"><span class="slider round"></span></label> dark</span>
+        </div>
+        <div>
+            <span class="barhighlight" onclick="window.location.replace('../Mood/index.html')">Moods</span>
+        </div>
+    </div>
+    <h2 id="page-heading">Add items to your list using the <span class="highlight">add new task</span> button below.</h2>
+    <div id="time-select">
+        <span><select id="quantity-option">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+            <option>11</option>
+            <option>12</option>
+            <option>13</option>
+            <option>14</option>
+            <option>15</option>
+            <option>16</option>
+            <option>17</option>
+            <option>18</option>
+            <option>19</option>
+            <option>20</option>
+            <option>21</option>
+            <option>22</option>
+            <option>23</option>
+            <option>24</option>
+            <option>25</option>
+            <option>26</option>
+            <option>27</option>
+            <option>28</option>
+            <option>29</option>
+            <option>30</option>
+            <option>31</option>
+            <option>32</option>
+            <option>33</option>
+            <option>34</option>
+            <option>35</option>
+            <option>36</option>
+            <option>37</option>
+            <option>38</option>
+            <option>39</option>
+            <option>40</option>
+            <option>41</option>
+            <option>42</option>
+            <option>43</option>
+            <option>44</option>
+            <option>45</option>
+            <option>46</option>
+            <option>47</option>
+            <option>48</option>
+            <option>49</option>
+            <option>50</option>
+            <option>51</option>
+            <option>52</option>
+            <option>53</option>
+            <option>54</option>
+            <option>55</option>
+            <option>56</option>
+            <option>57</option>
+            <option>58</option>
+            <option>59</option>
+            <option>60</option>
+        </select></span>
+        <span><select id="interval-option">
+            <option>minutes</option>
+            <option>seconds</option>
+            <option>hours</option>
+        </select></span>
+    </div>
+    <div id="task-timer"></div>
+    <div id="mood-scale">
+        <div>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 121.7 121.7" onclick="addMood(doing,3);hide(MOOD_SCALE);Finished();"><path class="good" d="M60.8 121.7c-33.5 0-60.8-27.3-60.8-60.8C0 27.3 27.3 0 60.8 0s60.8 27.3 60.8 60.8C121.7 94.4 94.4 121.7 60.8 121.7zM60.8 6C30.6 6 6 30.6 6 60.8c0 30.2 24.6 54.8 54.8 54.8s54.8-24.6 54.8-54.8C115.7 30.6 91.1 6 60.8 6z"/><path d="M60.6 100.4c-10 0-18.2-7.3-18.2-16.2h6c0 5.6 5.5 10.2 12.2 10.2 6.7 0 12.2-4.6 12.2-10.2h6C78.8 93.2 70.7 100.4 60.6 100.4z"/><path d="M46.4 66.2h-6c0-5.4-3.7-9.9-8.2-9.9s-8.2 4.4-8.2 9.9h-6c0-8.7 6.4-15.9 14.2-15.9S46.4 57.5 46.4 66.2z"/><path d="M103.8 66.2h-6c0-5.4-3.7-9.9-8.2-9.9s-8.2 4.4-8.2 9.9h-6c0-8.7 6.4-15.9 14.2-15.9S103.8 57.5 103.8 66.2z"/></svg>
+        </div>
+        <div>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 121.7 121.7" onclick="addMood(doing,2);hide(MOOD_SCALE);Finished();"><path class="average" d="M60.8 121.7c-33.5 0-60.8-27.3-60.8-60.8C0 27.3 27.3 0 60.8 0s60.8 27.3 60.8 60.8C121.7 94.4 94.4 121.7 60.8 121.7zM60.8 6C30.6 6 6 30.6 6 60.8c0 30.2 24.6 54.8 54.8 54.8s54.8-24.6 54.8-54.8C115.7 30.6 91.1 6 60.8 6z"/><circle cx="26.8" cy="60.8" r="8.4"/><circle cx="94.8" cy="60.8" r="8.4"/><rect x="44.3" y="87.8" width="33" height="6"/></svg>
+        </div>
+        <div>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 121.7 121.7" onclick="addMood(doing,1);hide(MOOD_SCALE);Finished();"><path class="bad" d="M60.8 121.7C27.3 121.7 0 94.4 0 60.8 0 27.3 27.3 0 60.8 0s60.8 27.3 60.8 60.8C121.7 94.4 94.4 121.7 60.8 121.7zM60.8 6C30.6 6 6 30.6 6 60.8c0 30.2 24.6 54.8 54.8 54.8s54.8-24.6 54.8-54.8C115.7 30.6 91.1 6 60.8 6z"/><path d="M78.8 97.4h-6c0-5.6-5.5-10.2-12.2-10.2s-12.2 4.6-12.2 10.2h-6c0-8.9 8.2-16.2 18.2-16.2S78.8 88.5 78.8 97.4z"/><path d="M32.1 69.2c-7.9 0-14.2-7.1-14.2-15.9h6c0 5.4 3.7 9.9 8.2 9.9s8.2-4.4 8.2-9.9h6C46.4 62.1 40 69.2 32.1 69.2z"/><path d="M89.5 69.2c-7.9 0-14.2-7.1-14.2-15.9h6c0 5.4 3.7 9.9 8.2 9.9s8.2-4.4 8.2-9.9h6C103.8 62.1 97.4 69.2 89.5 69.2z"/></svg>
+        </div>
+    </div>
+    <div id="button-bar">
+        <button id="add-button" onclick="Add()">add new task</button>
+        <button id="start-button" onclick="Start()">start</button>
+        <button id="delete-button">delete</button>
+        <button id="ready-button" onclick="Ready()">ready</button>
+        <button id="finished-button" onclick="Mood()">finished</button>
+        <button id="yes-button" onclick="Mood()">yes</button>
+        <button id="no-button" onclick="hide(YES_BUTTON,NO_BUTTON);Start()">no</button>
+        <button id="cancel-button" onclick="document.location.reload(false)">cancel</button>
+    </div>
+	<script type="text/javascript" src="../Mood/mood.js"></script>
+	<script type="text/javascript" src="../Shared/tools.js"></script>
+	<script type="text/javascript" src="../Shared/speech.js"></script>
+	<script type="text/javascript" src="../Shared/timer.js"></script>
+	<script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>

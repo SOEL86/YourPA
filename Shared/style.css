@@ -1,0 +1,206 @@
+html,body {
+    margin:0;
+    padding:0;
+    height:100%;
+}
+body {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+h1 {
+    margin: 0;
+    padding: 0;
+    margin-top:20px;
+    font-size: 12pt;
+    font-weight: 400;
+    opacity: 50%;
+}
+h2 {
+    margin: 0;
+    padding: 0;
+    margin-top:20px;
+    font-size: 12pt;
+    font-weight: 400;
+    opacity: 50%;
+}
+h3 {
+    margin: 0;
+    padding: 0;
+    margin-top:20px;
+    font-size: 12pt;
+    font-weight: 400;
+    opacity: 50%;
+}
+select {
+    height: 40px;
+}
+.titleBar {
+    display:flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+.titleBar h1 {
+    font-size:10pt;
+    width:70%;
+}
+.titleBar h2 {
+    font-size:10pt;
+    width:20%;
+}
+.titleBar h3 {
+    font-size:10pt;
+    width:60px;
+    margin-left:10px;
+    margin-right:10px;
+}
+.moodReadout {
+    display:flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+.moodReadout h1 {
+    font-size:17pt;
+    line-height: 25px;
+    width:70%;
+}
+.moodReadout h2 {
+    font-size:9pt;
+    line-height: 25px;
+    width:20%;
+}
+.moodReadout svg {
+    margin-left:10px;
+    margin-right:10px;
+}
+.highlight {
+    background-color: darkslategray;
+    border-radius: 10px;
+    color:white;
+    padding:10px;
+    box-shadow: 3px 3px 0px 0px rgba(10,10,10,1);
+}
+.barhighlight {
+    background-color: darkslategray;
+    padding-left:3px;
+    padding-right:3px;
+    border-radius: 10px;
+    color:white;
+    padding:10px;
+    box-shadow: 3px 3px 0px 0px rgba(10,10,10,1);
+    margin: 10px;
+    cursor: pointer;
+}
+.barhighlight:hover {
+    background-color:dodgerblue;
+}
+.setting-option {
+    margin-left:5px;
+}
+.dark {
+    background-color:dimgray;
+    color:white;
+}
+.light {
+    background-color:white;
+    color:dimgray;
+}
+#page-heading {
+    line-height: 40px;
+}
+#start-prompt {
+    line-height: 40px;
+}
+#button-bar {
+    position: fixed;
+    bottom: 10px;
+}
+#voicebar {
+    position: fixed;
+    top: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    height: 50px;
+}
+#settingsbar {
+    display: flex;
+    flex-direction: row;
+}
+.fade {
+    opacity: 0;
+    transition: opacity 3s ease-in;
+}
+button {
+    height: 80px;
+    width: 120px;
+    background-color:darkslategray;
+    border: 0;
+    border-radius: 10px;
+    color: white;
+    font-size: 20pt;
+    opacity: 70%;
+    cursor: pointer;
+    margin-left: 25px;
+    margin-left: 25px;
+    box-shadow: 3px 3px 0px 0px rgba(10,10,10,1);
+    padding:10px;
+}
+button:focus {
+    outline:none;
+}
+button:hover {
+    opacity: 1;
+}
+li {
+    width:100%;
+    list-style-type:none;
+    cursor: pointer;
+}
+li:hover {
+    background-color:beige;
+    color:slategray;
+}
+#selected {
+    cursor: default;
+    background-color: skyblue;
+    color: white;
+}
+#add-button {
+    width: auto;
+}
+#cancel-button, #delete-button {
+    background-color:coral;
+}
+svg {
+    height:60px;
+    width:60px;
+    margin-left:50px;
+    margin-right:50px;
+    cursor: pointer;
+}
+.good {
+    fill:green;
+}
+.average {
+    fill:orange;
+}
+.bad {
+    fill:red;
+}
+#mood-scale {
+    display: flex;
+}
+#settings-bar, #voice-select, #theme-switch, #cancel-button, #delete-button, #ready-button, #finished-button, #time-select, #task-timer, #yes-button, #no-button, #start-button, #mood-scale {
+    display: none;
+}
